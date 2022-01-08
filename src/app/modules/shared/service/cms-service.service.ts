@@ -11,7 +11,19 @@ export class CmsServiceService {
   }
 
   getHeaderMenu() {
-    return this.http.get(`${environment.api_url}nav`);
+    return this.http.get(`${environment.api_url}cms/nav`);
   }
 
+  getFeaturedCards() {
+    return this.http.get(`${environment.api_url}cms/featured_cards`);
+
+  }
+
+  getEventServices() {
+    return this.http.get(`${environment.api_url}cms/event_services`);
+  }
+
+  getClients() {
+    return this.http.get(`${environment.api_url}cms/clients`);
+  }
 }

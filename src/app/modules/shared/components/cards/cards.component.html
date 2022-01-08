@@ -3,83 +3,20 @@
     <div class="row">
       <div class="col-md-8">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" *ngFor="let single_featured_card of featured_cards" style="margin-bottom: 2%;">
             <!--featured-box-->
             <div class="featured-box style3 text-center ttm-bgcolor-white box-shadow1 res-mb30-767">
               <div class="featured-icon">
                 <div class="ttm-icon ttm-icon_element-size-sm ttm-icon_element-color-skincolor">
-                  <i class="flaticon flaticon-marriage-couple"></i>
+                  <i class="flaticon" [class]="single_featured_card.img_url"></i>
                 </div>
               </div>
               <div class="featured-content">
                 <div class="featured-title">
-                  <h5>Wedding</h5>
+                  <h5>{{single_featured_card?.heading}}</h5>
                 </div>
                 <div class="featured-desc">
-                  <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                    client’s. wedding.</p>
-                </div>
-              </div>
-            </div>
-            <!-- featured-box end-->
-          </div>
-          <div class="col-md-6">
-            <!--featured-box-->
-            <div class="featured-box style3 text-center ttm-bgcolor-white box-shadow1">
-              <div class="featured-icon">
-                <div class="ttm-icon ttm-icon_element-size-sm ttm-icon_element-color-skincolor">
-                  <i class="flaticon flaticon-dinner-table"></i>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="featured-title">
-                  <h5>Private Party</h5>
-                </div>
-                <div class="featured-desc">
-                  <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                    client’s. wedding.</p>
-                </div>
-              </div>
-            </div>
-            <!-- featured-box end-->
-          </div>
-        </div>
-        <div class="row mt-30">
-          <div class="col-md-6">
-            <!--featured-box-->
-            <div class="featured-box style3 text-center ttm-bgcolor-white box-shadow1 res-mb30-767">
-              <div class="featured-icon">
-                <div class="ttm-icon ttm-icon_element-size-sm ttm-icon_element-color-skincolor">
-                  <i class="flaticon flaticon-cake"></i>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="featured-title">
-                  <h5>Birthday Party</h5>
-                </div>
-                <div class="featured-desc">
-                  <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                    client’s. wedding.</p>
-                </div>
-              </div>
-            </div>
-            <!-- featured-box end-->
-          </div>
-          <div class="col-md-6">
-            <!--featured-box-->
-            <div class="featured-box style3 text-center ttm-bgcolor-white box-shadow1 res-mb30-767">
-              <div class="featured-icon">
-                <div class="ttm-icon ttm-icon_element-size-sm ttm-icon_element-color-skincolor">
-                  <i class="flaticon flaticon-man-in-a-party-dancing-with-people"></i>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="featured-title">
-                  <h5>Corporate Party</h5>
-                </div>
-                <div class="featured-desc">
-                  <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                    client’s. wedding.</p>
+                  <p>{{single_featured_card?.sub_heading}}</p>
                 </div>
               </div>
             </div>
@@ -95,27 +32,19 @@
           </div>
           <div class="layer-content">
             <div class="section-title clearfix mb-30">
-              <h5 class="title">The Best Event<br> Planner</h5>
-              <p>With our passion, knowledge, creative flair and inspiration, we are dedicated in helping you to
-                achieve.</p>
+              <h5 class="title">{{right_featured_card?.heading}}</h5>
+              <p>{{right_featured_card?.sub_heading}}</p>
             </div>
             <div class="row">
               <div class="col-md-12 col-lg-12">
                 <ul class="ttm-list ttm-list-style-icon ttm-textcolor-white">
-                  <li><i class="fa fa-check-square-o"></i><span class="ttm-list-li-content">Wedding Cakes</span></li>
-                  <li><i class="fa fa-check-square-o"></i><span class="ttm-list-li-content">Photo,Video</span></li>
-                  <li><i class="fa fa-check-square-o"></i><span class="ttm-list-li-content">Venue Selections</span>
-                  </li>
-                  <li><i class="fa fa-check-square-o"></i><span
-                    class="ttm-list-li-content">Managing Your Guest List</span></li>
-                  <li><i class="fa fa-check-square-o"></i><span class="ttm-list-li-content">Unforgatable Time</span>
-                  </li>
-                  <li><i class="fa fa-check-square-o"></i><span class="ttm-list-li-content">Venue finding</span></li>
+                  <li *ngFor="let service of right_featured_card?.services"><i class="fa fa-check-square-o"></i><span
+                    class="ttm-list-li-content">{{service}}</span></li>
                 </ul>
               </div>
             </div>
             <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-white mt-15"
-               href="#">View More</a>
+               [routerLink]="right_featured_card?.url">View More</a>
           </div>
         </div>
         <!-- col-bg-img-three end-->

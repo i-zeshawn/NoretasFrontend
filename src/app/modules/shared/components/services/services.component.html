@@ -3,10 +3,9 @@
     <div class="row text-left">
       <div class="col-lg-9 col-md-9">
         <div class=" section-title clearfix">
-          <h4>WELCOME TO PLANWEY</h4>
-          <h2 class="title">Our Event Services</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry’type specimen book.</p>
+          <h4>WELCOME TO NORETAS DECOR</h4>
+          <h2 class="title">{{events?.Heading?.text}}</h2>
+          <p>{{events?.Heading?.description}}</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-3">
@@ -16,58 +15,20 @@
       </div>
     </div>
     <div class="row m-0 res-1199-mlr-15">
-      <div class="col-md-4 p-0">
+      <div class="col-md-4 p-0" *ngFor="let single_event of events?.Events">
         <div class="featured-imagebox">
           <div class="featured-thumbnail">
-            <img class="img-fluid" src="assets/images/service-4.jpg" alt="img">
+            <img class="img-fluid" [src]="environment+single_event.img_url" alt="img">
           </div>
           <div class="featured-bottom-content ttm-bgcolor-white text-center">
             <div class="featured-title">
-              <h5>Perfect Venues</h5>
+              <h5>{{single_event.text}}</h5>
             </div>
             <div class="featured-desc">
-              <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                client’s. wedding.</p>
+              <p>{{single_event.description}}</p>
             </div>
-            <a class="ttm-btn btn-inline ttm-btncolor-black ttm-icon-btn-right" href="#">Read More
-              <i class="ti-angle-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 p-0">
-        <div class="featured-imagebox">
-          <div class="featured-thumbnail">
-            <img class="img-fluid" src="assets/images/service-5.jpg" alt="img">
-          </div>
-          <div class="featured-bottom-content ttm-bgcolor-grey text-center">
-            <div class="featured-title">
-              <h5>Unique Scenarios</h5>
-            </div>
-            <div class="featured-desc">
-              <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                client’s. wedding.</p>
-            </div>
-            <a class="ttm-btn btn-inline ttm-btncolor-black ttm-icon-btn-right" href="#">Read More
-              <i class="ti-angle-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 p-0">
-        <div class="featured-imagebox">
-          <div class="featured-thumbnail">
-            <img class="img-fluid" src="assets/images/service-6.jpg" alt="img">
-          </div>
-          <div class="featured-bottom-content ttm-bgcolor-white text-center">
-            <div class="featured-title">
-              <h5>Perfect Venues</h5>
-            </div>
-            <div class="featured-desc">
-              <p>A wedding and Birthday planner is a who assists with the design, planning and management of a
-                client’s. wedding.</p>
-            </div>
-            <a class="ttm-btn btn-inline ttm-btncolor-black ttm-icon-btn-right" href="#">Read More
+            <a class="ttm-btn btn-inline ttm-btncolor-black ttm-icon-btn-right"
+               [routerLink]="'services/'+single_event._id">Read More
               <i class="ti-angle-right"></i>
             </a>
           </div>

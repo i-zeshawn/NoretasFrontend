@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CmsServiceService} from "../../service/cms-service.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-latest-events',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestEventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cmsService: CmsServiceService, private toaster: ToastrService) {
+  }
 
   ngOnInit(): void {
   }
+
 
 }
