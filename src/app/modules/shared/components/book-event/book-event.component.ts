@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
+import {CmsServiceService} from "../../service/cms-service.service";
 
 @Component({
   selector: 'app-book-event',
@@ -10,7 +11,7 @@ import {ToastrService} from "ngx-toastr";
 export class BookEventComponent implements OnInit {
   contactForm: FormGroup = new FormGroup({}, undefined, undefined);
 
-  constructor(private fb: FormBuilder, private toaster: ToastrService) {
+  constructor(private fb: FormBuilder, private toaster: ToastrService, private cmsService: CmsServiceService) {
   }
 
   ngOnInit(): void {
@@ -27,9 +28,18 @@ export class BookEventComponent implements OnInit {
     })
   }
 
-  book() {
+  submit() {
     if (this.contactForm.invalid) {
       this.toaster.error("Please add all required fields");
+      return;
     }
+    this.cmsService.submitContactForm(this.contactForm.value).subscribe((data: any) => {
+      if (data.success) {
+        this.toaster.success(data.message);
+        this.contactForm.reset();
+      } else {
+        this.toaster.error(data.message);
+      }
+    })
   }
 }

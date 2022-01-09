@@ -14,6 +14,9 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { PagesHeaderComponent } from './components/pages-header/pages-header.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     GalleryComponent,
     BookEventComponent,
     BlogsComponent,
+    PagesHeaderComponent,
+    AboutUsComponent,
   ],
   exports: [
     HeaderComponent,
@@ -39,9 +44,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     TestimonialsComponent,
     GalleryComponent,
     BookEventComponent,
-    BlogsComponent
+    BlogsComponent,
+    AboutUsComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     RouterModule,
     HttpClientModule,

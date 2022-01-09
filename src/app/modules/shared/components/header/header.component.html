@@ -7,7 +7,7 @@
           <div class="container">
             <!-- site-branding -->
             <div class="site-branding">
-              <a class="home-link" href="index.html" title="Planwey" rel="home">
+              <a class="home-link" href="index.html" title="Noretas Decor" rel="home">
                 <img id="logo-img" class="img-center" src="assets/images/logo-img.png" alt="logo-img">
               </a>
             </div><!-- site-branding end -->
@@ -38,5 +38,6 @@
       </div>
     </div>
   </div>
-  <app-banner></app-banner>
+  <app-banner *ngIf="is_home"></app-banner>
+  <app-pages-header *ngIf="!is_home" [current_route]="current_route"></app-pages-header>
 </header>

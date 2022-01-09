@@ -26,4 +26,8 @@ export class CmsServiceService {
   getClients() {
     return this.http.get(`${environment.api_url}cms/clients`);
   }
+
+  submitContactForm(contact_form: any) {
+    return this.http.post(`${environment.api_url}cms/contact_form`, contact_form);
+  }
 }
